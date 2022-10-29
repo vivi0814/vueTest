@@ -9,17 +9,18 @@
 <body>
     <div id="app">
         <!-- 雙花括弧是模板語言 -->
+        <!-- 作用域scope -->
         <h1>
-            {{count}}
+            {{typeof count}}
         </h1>
         <p>
             {{name}}{{kind}}
         </p>
         <div>
-            {{talk}}
+            {{talk ? '嘴巴':'閉閉'}}
         </div>
         <div>
-            {{array}}
+            {{array.length}}
         </div>
         <div>
             {{obj}}
