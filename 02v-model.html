@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1 data-mode="dark">{{title}}</h1>
+        <h6>${{price}}</h6>
+        <div>
+            <!-- count=count-1 -->
+            <button @click="reduceCount">-</button>
+            <!-- <input type="text" v-model="count"> -->
+            <input type="text" v-model.number="count">
+            <button @click="addCount">+</button>
+        </div>
+        <button>Add</button>
+        <p>{{total}}元</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    title:'我是狗',
+                    price:100,
+                    count:0,
+                    total:0,
+                }
+            },
+            methods:{
+                addCount(){
+                    this.count+=1
+                    // this.total=this.count*this.price
+                    //一樣的程式碼放在下面模組
+                    this.sumTotal()
+                },
+                reduceCount(){
+                    if(this.count<=0) return
+                    this.count -=1
+                    // this.total=this.count*this.price
+                    //一樣的程式碼放在下面模組
+                    this.sumTotal()
+                },
+                sumTotal(){
+                    this.total=this.count*this.price
+                }
+            }
+        }).mount('#app') 
+
+    </script>
+</body>
+</html>
