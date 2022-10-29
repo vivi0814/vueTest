@@ -7,6 +7,43 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="app">
+        <!-- 雙花括弧是模板語言 -->
+        <h1>
+            {{count}}
+        </h1>
+        <p>
+            {{name}}{{kind}}
+        </p>
+        <div>
+            {{talk}}
+        </div>
+        <div>
+            {{array}}
+        </div>
+        <div>
+            {{obj}}
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <!-- vue3的寫法 -->
+    <script>
+        // 新增一個應用application→建立Vue實體(instance)
+        Vue.createApp({
+            data(){
+                return{
+                    count:1,  //number
+                    name:'烏龜', //string
+                    kind:'開心',
+                    talk:true, //boolen
+                    array:[1,2,3], //array
+                    obj:{test:'123'}, //object
+                }
+            }
+        }).mount('#app') //並掛載(mount)在網頁結點上
+
+    </script>
 </body>
 </html>
