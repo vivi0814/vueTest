@@ -20,15 +20,33 @@
     <div id="app">
         <!-- 變數 in 物件/陣列 -->
         <div class="pagination">
-            <button v-for="page in 10" :key="page">{{page}}</button>
+            <button v-for="page in 10" :key="page">{{page}}</button>  
+            <!-- key如果有唯一值就用唯一值，如果沒有就放變數，這裡就是放變數 -->
+
         </div>
         <div class="productContainer">
-            <div v-for="(item, index) in product" :key="item.id">
+            <div v-for="(item, index) in product" :key="item.id">   
+                <!-- v-for的用法===>變數in物件/陣列===>變數item(第幾個商品) in 陣列product(陣列) -->
+                <!-- key如果有唯一值就用唯一值，如果沒有就放變數 ，這裡放唯一值-->
+                <!-- item in是指在product陣列裡的「單筆」資料，取名叫item -->
+                <!-- {{index}} -->
+                <!-- index代表物件的索引值，從0開始 -->
+                <!-- (item, index)用小括號因為在這裡是一個變數 -->
+                
                 <p>{{item.title}}</p>
+
+
                 <img :src="item.image" :alt="item.title">
+                <!-- v-bind語法 -->
+                <!-- 绑定 attribute -->
+                <!-- 縮寫  <img v-bind:src="item.image" /> -->
+
+
                 <h6>${{item.price}}</h6>
                 <div>
                     <button @click="reduceCount(index)">-</button>
+                    <!-- v-on:click = @click -->
+
                     <input type="number" v-model="count[index]">
                     <button @click="addCount(index)">+</button>
                 </div>
