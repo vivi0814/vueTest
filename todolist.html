@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue2</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="toDoText">
+        <button type="button" @click="addTodo()">新增</button>
+        <ul>
+            <li v-for="(item, index) in list" :key="index">
+                {{index+1}}.{{item}}
+                <button type="button" @click="removeTodo(index)">X</button>
+            </li>
+
+        </ul>
+        <!-- <button @click="doneAll">全部完成</button> -->
+        <hr>
+        <!-- <h6>Done</h6>
+        <ul>
+            <li v-for="(item, index) in doneList" :key="index">
+                {{item.name}}
+            </li>
+        </ul> -->
+        <button @click="clearAll">全部刪除</button>
+        <!-- <button @click="clearSelect">刪除完成項目(刪除選取)</button> -->
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+        Vue.createApp({ 
+            data(){
+                return {
+                    toDoText: '',
+                    list: [],
+                }
+            },
+            // computed:{
+            //     doneList(){
+            //         return this.list.filter(item => item.select)
+            //     }
+            // },
+            methods: {
+                addTodo(){
+                    this.list.push(this.toDoText);
+                    this.toDoText = '';
+                },
+                removeTodo(index){
+                    this.list.splice(index,1);
+                },
+                // doneAll(){
+                //     this.list = this.list.map(item => {
+                //         return {
+                //             ...item,
+                //             select: true
+                //         }
+                //     })
+                // },
+                clearAll(){
+                    this.list = []
+                },
+                // clearSelect(){
+                //     this.list = this.list.filter(item => !item.select)
+                // }
+            },
+        }).mount("#app")
+    </script>
+</body>
+</html>
