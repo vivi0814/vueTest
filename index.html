@@ -6,40 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    h1{
+        display: flex;
+        justify-content: center;
+        color: #696969;
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        /* width: 600px; */
+        justify-content: center;
+    }
+    li{
+        background-color: rgb(237, 204, 138);
+        box-shadow: 4px 4px 4px 0px #dadada;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        width: 200px;
+    }
+    li:hover{
+        background-color: rgb(110, 102, 86);
+    }
+    li:hover>a{
+        color:#ffa620;
+    }
+    a{
+        text-align: center;
+        color: #696969;
+        text-decoration: none;
+        font-size: 30px;
+    }
+</style>
 <body>
+    <h1>Vue 作業</h1>
     <ul>
         <li>
-            <a href="00vue2.html">0</a>
+            <a href="00vue2.html">vue 2</a>
         </li>
         <li>
-            <a href="01quickstart.html">1</a>
+            <a href="01quickstart.html">quick start</a>
         </li>
         <li>
-            <a href="02v-model.html">2</a>
+            <a href="02v-model.html">v-model</a>
         </li>
         <li>
-            <a href="03v-for.html">3</a>
+            <a href="03v-for.html">v-for</a>
         </li>
         <li>
-            <a href="04-calc.html">4</a>
+            <a href="04-calc.html">calculator</a>
         </li>
         <li>
-            <a href="05-products.html">5</a>
+            <a href="05-products.html">products</a>
         </li>
         <li>
-            <a href="06-register.html">6</a>
+            <a href="06-register.html">register</a>
         </li>
         <li>
-            <a href="07-lifecircle.html">7</a>
+            <a href="07-lifecircle.html">lifecircle</a>
         </li>
         <li>
-            <a href="08-scrollTo.html">8</a>
+            <a href="08-scrollTo.html">scrollTo</a>
         </li>
         <li>
-            <a href="09-framework.html">9</a>
+            <a href="09-framework.html">framework</a>
         </li>
         <li>
-            <a href="10-component.html">10</a>
+            <a href="10-component.html">component</a>
         </li>
         <li>
             <a href="todolist.html">toDolist</a>
